@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "3f5737fd-c742-4c07-bcd9-81c9f950712a",
+		"name": "ExamenApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8108056"
+	},
+	"item": [
+		{
+			"name": "Calificar respuestas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"65dbc842-0f54-45d7-a60e-ad0788b6f45c\",\r\n    \"preguntas\": [\r\n        {\r\n            \"id\": \"821fcdc1-8071-487c-9e83-55f676e1b5d8\",\r\n            \"opcionSeleccionada\": \"opcionC\"\r\n        },\r\n        {\r\n            \"id\": \"094194ee-286d-441c-9cbc-762dacf760c2\",\r\n            \"opcionSeleccionada\": \"opcionC\"\r\n        },\r\n        {\r\n            \"id\": \"e8820d07-92d2-4109-b5bb-cbfbccc6eff8\",\r\n            \"opcionSeleccionada\": \"opcionD\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/pregunta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pregunta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set fecha examen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\":\"2024-03-03T10:15:30\",\r\n    \"estudiantes\":[\r\n        {\"id\":\"dad3ef7f-1cc7-468a-86ea-4be4e743d33c\"},\r\n        {\"id\":\"1cb7f733-ce8d-40d5-b77f-006aa6ad340a\"},\r\n        {\"id\":\"8ed42ad8-750f-4108-8eae-aa6fdebb1d7b\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/examen/65dbc842-0f54-45d7-a60e-ad0788b6f45c/activar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"examen",
+						"65dbc842-0f54-45d7-a60e-ad0788b6f45c",
+						"activar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear examen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Matematicas I\",\r\n    \"preguntas\": [\r\n        {\r\n            \"enunciado\": \"Cuanto es 1 + 1: \",\r\n            \"opcionA\": 1,\r\n            \"opcionB\": 0,\r\n            \"opcionC\": 2,\r\n            \"opcionD\": -1,\r\n            \"opcionCorrecta\": \"opcionC\",\r\n            \"puntos\":10\r\n        },\r\n        {\r\n            \"enunciado\": \"Cuanto es 1 - 1: \",\r\n            \"opcionA\": 1,\r\n            \"opcionB\": 0,\r\n            \"opcionC\": 2,\r\n            \"opcionD\": -1,\r\n            \"opcionCorrecta\": \"opcionB\",\r\n            \"puntos\":40\r\n        },\r\n        {\r\n            \"enunciado\": \"Cuanto es 0 - 1: \",\r\n            \"opcionA\": 1,\r\n            \"opcionB\": 0,\r\n            \"opcionC\": 2,\r\n            \"opcionD\": -1,\r\n            \"opcionCorrecta\": \"opcionD\",\r\n            \"puntos\":50\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/examen",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"examen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Max\",\r\n    \"edad\": 15,\r\n    \"ciudad\": \"Italia\",\r\n    \"zonaHoraria\": \"Europe/Rome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/estudiante",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiante"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
